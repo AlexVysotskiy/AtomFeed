@@ -24,6 +24,12 @@ class FeedSource {
      */
     protected $url;
 
+    /**
+     * @var \DateTime
+     * @ORM\Column(name="import_date", type="datetime")
+     */
+    protected $importDate;
+
     public function getId() {
         return $this->id;
     }
@@ -40,5 +46,24 @@ class FeedSource {
         $this->url = $url;
         return $this;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getImportDate()
+    {
+        return $this->importDate;
+    }
+
+    /**
+     * @param \DateTime $importDate
+     * @return self
+     */
+    public function setImportDate($importDate)
+    {
+        $this->importDate = $importDate;
+        return $this;
+    }
+
 
 }
